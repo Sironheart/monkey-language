@@ -3,19 +3,18 @@ package lexer
 import (
 	"testing"
 
-	"intepreter/token"
+	"interpreter/token"
 )
 
 func TestNextToken(t *testing.T) {
 	input := `let five = 5;
 let ten = 10;
 
-let add_function = fn(x, y) {
+let add = fn(x, y) {
   x + y;
 };
 
 let result = add(five, ten);
-
 !-/*5;
 5 < 10 > 5;
 
@@ -44,7 +43,7 @@ if (5 < 10) {
 		{token.INT, "10"},
 		{token.SEMICOLON, ";"},
 		{token.LET, "let"},
-		{token.IDENT, "add_function"},
+		{token.IDENT, "add"},
 		{token.ASSIGN, "="},
 		{token.FUNCTION, "fn"},
 		{token.LPAREN, "("},
