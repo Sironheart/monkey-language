@@ -23,7 +23,8 @@
                 inherit name vendorHash;
                 src = ./.;
               };
-              docker = pkgs.dockerTools.buildImage {
+
+              docker = pkgs.dockerTools.buildLayeredImage {
                 inherit name;
                 tag = "latest";
               };
